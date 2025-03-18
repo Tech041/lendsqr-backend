@@ -3,17 +3,20 @@ import cors from "cors";
 import "dotenv/config";
 import connectDB from "./config/mongodb.js";
 import userRouter from "./routes/userRoute.js";
+import userDetailsRouter from "./routes/userDetailsRoute.js";
 
 const app = express();
 const port = 8080;
 
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+
 
 connectDB();
 
 // Routes
 app.use("/api/user", userRouter);
+app.use("/api/user", userDetailsRouter);
 
 app.get("/", (req, res) => {
   res.send("API WORKING");

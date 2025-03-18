@@ -8,11 +8,14 @@ import userDetailsRouter from "./routes/userDetailsRoute.js";
 const app = express();
 const port = 8080;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://lendsqr-clone-bice.vercel.app/",
+  })
+);
 app.use(express.json());
 
-
-connectDB();
+await connectDB();
 
 // Routes
 app.use("/api/user", userRouter);

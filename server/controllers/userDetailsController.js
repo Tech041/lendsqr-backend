@@ -1,4 +1,4 @@
-import userDetailsModel from "../models/UserDetailsModel.js";
+import userDetailsModel from "../models/userDetailsModel.js";
 import validator from "validator";
 import bcrypt from "bcryptjs";
 // Validating user input
